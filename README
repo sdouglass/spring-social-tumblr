@@ -1,0 +1,8 @@
+Spring Social project to connect with the Tumblr v2 API. For more info see:
+
+http://www.springsource.org/spring-social
+http://www.tumblr.com/docs/en/api/v2
+
+Supports accessing API calls requiring no authentication, or requiring just an API key, as well as calls requiring OAuth.
+
+NOTE: Does not yet support submitting binary files (photos, mp3s, video).
