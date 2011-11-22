@@ -68,8 +68,6 @@ public class ModifyPhotoPost extends ModifyPost {
                 String bytesString = convertResourceToString(resource);
                 map.add("data[" + i + "]", bytesString);
             }
-        } else {
-            throw new IllegalArgumentException("source and data cannot both be null");
         }
 
         if (caption != null) {

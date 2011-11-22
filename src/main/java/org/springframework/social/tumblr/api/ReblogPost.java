@@ -6,12 +6,12 @@ import org.springframework.util.MultiValueMap;
  * @author sam
  * @version $Id$
  */
-public class ModifyReblogPost extends ModifyPost {
+public class ReblogPost extends ModifyPost {
 
     private String reblogKey;
     private String comment;
 
-    public ModifyReblogPost() {
+    public ReblogPost() {
         super(PostType.REBLOG);
     }
 

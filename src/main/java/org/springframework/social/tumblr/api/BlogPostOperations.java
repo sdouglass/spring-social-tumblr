@@ -10,7 +10,7 @@ public interface BlogPostOperations {
 
     void edit(ModifyPost post);
 
-    void reblog(ModifyReblogPost reblogPost);
+    void reblog(ReblogPost reblogPost);
 
     void delete(long id);
     

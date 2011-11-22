@@ -21,6 +21,9 @@ public class BlogTemplate extends AbstractBlogOperations implements BlogOperatio
     }
 
     public String avatar(AvatarSize size) {
+        if (size == null) {
+            throw new IllegalArgumentException("size must not be null");
+        }
         HttpHeaders headers = getRestTemplate().headForHeaders(buildUri("avatar/" + size.getDimension()));
         return headers.getLocation().toString();
     }

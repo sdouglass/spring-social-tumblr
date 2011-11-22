@@ -49,8 +49,6 @@ public class ModifyVideoPost extends ModifyPost {
             map.add("embed", embed);
         } else if (data != null) {
             map.add("data", convertResourceToString(data));
-        } else {
-            throw new IllegalArgumentException("embed and data cannot both be null");
         }
 
         if (caption != null) {

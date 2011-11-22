@@ -2,17 +2,16 @@ package org.springframework.social.tumblr.api;
 
 import org.springframework.core.io.Resource;
 import org.springframework.format.datetime.DateFormatter;
-import org.springframework.security.crypto.codec.Base64;
 import org.springframework.util.*;
 
 import java.io.*;
-import java.net.URLEncoder;
 import java.util.*;
 
 /**
  * @author sam
  * @version $Id$
  */
+@SuppressWarnings("unused")
 public abstract class ModifyPost {
 
     private Long id;
@@ -135,33 +134,16 @@ public abstract class ModifyPost {
         return map;
     }
 
-    // TODO figure out how to do this the way Tumblr expects
     String convertResourceToString(Resource resource) {
         try {
-//            Reader reader = new BufferedReader(new InputStreamReader(resource.getInputStream(), "UTF8"));
-//            String bytesString = FileCopyUtils.copyToString(reader);
             byte[] bytes = FileCopyUtils.copyToByteArray(resource.getInputStream());
-//            bytes = Base64.encode(bytes);
-            String bytesString = new String(bytes);
-//            bytesString = bytesString.replaceAll("/", "%2F");
-//            StringBuilder sb = new StringBuilder();
-//            for (byte b : bytes) {
-//                sb.append(Integer.toHexString((int) (b & 0xff)));
-//            }
-//            return sb.toString();
-//            return new String(bytes);
-            System.err.println("bytesString");
-            System.err.println(bytesString);
-            System.err.println("url encoded");
-            System.err.println(URLEncoder.encode(bytesString, "UTF-8"));
-            System.err.println("oauth encoded");
-            System.err.println(oauthEncode(bytesString));
-            return bytesString;
+            return new String(bytes, "LATIN1");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
 
+    // from Spring Social Core SigningSupport, would reuse but these methods are private and the class has package access
     private static final BitSet UNRESERVED;
 
     static {
@@ -189,7 +171,8 @@ public abstract class ModifyPost {
     private static String oauthEncode(String param) {
         try {
             // See http://tools.ietf.org/html/rfc5849#section-3.6
-            byte[] bytes = encode(param.getBytes("UTF-8"), UNRESERVED);
+            // however, Tumblr appears to use LATIN1, not UTF-8, for binary data
+            byte[] bytes = encode(param.getBytes("LATIN1"), UNRESERVED);
             return new String(bytes, "US-ASCII");
         } catch (Exception shouldntHappen) {
             throw new IllegalStateException(shouldntHappen);

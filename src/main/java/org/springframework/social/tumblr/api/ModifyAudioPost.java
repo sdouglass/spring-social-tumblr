@@ -49,8 +49,6 @@ public class ModifyAudioPost extends ModifyPost {
             map.add("external_url", externalUrl);
         } else if (data != null) {
             map.add("data", convertResourceToString(data));
-        } else {
-            throw new IllegalArgumentException("external_url and data cannot both be null");
         }
 
         if (caption != null) {

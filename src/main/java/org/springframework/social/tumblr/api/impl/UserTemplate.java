@@ -28,6 +28,9 @@ public class UserTemplate extends AbstractTumblrOperations implements UserOperat
 
     public Posts dashboard(PostsQuery query) {
         requireAuthorization();
+        if (query == null) {
+            query = new PostsQuery();
+        }
         return getRestTemplate().getForObject(buildUri("user/dashboard").toString(), Posts.class, query.toParameterMap());
     }
 
@@ -38,8 +41,8 @@ public class UserTemplate extends AbstractTumblrOperations implements UserOperat
     public Likes likes(int offset, int limit) {
         requireAuthorization();
         MultiValueMap<String, Object> params = new LinkedMultiValueMap<String, Object>();
-        params.add("offset", offset);
-        params.add("limit", limit);
+        params.add("offset", Integer.toString(offset));
+        params.add("limit", Integer.toString(limit));
         return getRestTemplate().getForObject(buildUri("user/likes").toString(), Likes.class, params);
     }
 
@@ -53,6 +56,9 @@ public class UserTemplate extends AbstractTumblrOperations implements UserOperat
     }
 
     public void follow(String blogUrl) {
+        if (blogUrl == null) {
+            throw new IllegalArgumentException("blogUrl must not be null");
+        }
         requireAuthorization();
         MultiValueMap<String, Object> map = new LinkedMultiValueMap<String, Object>();
         map.add("url", blogUrl);
@@ -61,6 +67,9 @@ public class UserTemplate extends AbstractTumblrOperations implements UserOperat
     }
 
     public void unfollow(String blogUrl) {
+        if (blogUrl == null) {
+            throw new IllegalArgumentException("blogUrl must not be null");
+        }
         requireAuthorization();
         MultiValueMap<String, Object> map = new LinkedMultiValueMap<String, Object>();
         map.add("url", blogUrl);
@@ -69,18 +78,24 @@ public class UserTemplate extends AbstractTumblrOperations implements UserOperat
     }
 
     public void like(long id, String reblogKey) {
+        if (reblogKey == null) {
+            throw new IllegalArgumentException("reblogKey must not be null");
+        }
         requireAuthorization();
         MultiValueMap<String, Object> map = new LinkedMultiValueMap<String, Object>();
-        map.add("id", id);
+        map.add("id", Long.toString(id));
         map.add("reblog_key", reblogKey);
         // should either error or not
         getRestTemplate().postForObject(buildUri("user/like"), map, TumblrResponse.class);
     }
 
     public void unlike(long id, String reblogKey) {
+        if (reblogKey == null) {
+            throw new IllegalArgumentException("reblogKey must not be null");
+        }
         requireAuthorization();
         MultiValueMap<String, Object> map = new LinkedMultiValueMap<String, Object>();
-        map.add("id", id);
+        map.add("id", Long.toString(id));
         map.add("reblog_key", reblogKey);
         // should either error or not
         getRestTemplate().postForObject(buildUri("user/unlike"), map, TumblrResponse.class);
