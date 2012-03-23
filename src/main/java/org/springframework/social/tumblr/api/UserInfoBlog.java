@@ -10,6 +10,7 @@ public class UserInfoBlog {
     private String url;
     private String title;
     private boolean ask;
+    private boolean askAnon;
     private int followers;
     private boolean primary;
     private boolean admin;
@@ -87,4 +88,12 @@ public class UserInfoBlog {
     public void setTweet(String tweet) {
         this.tweet = tweet;
     }
+    
+    public boolean isAskAnon() {
+      return askAnon;
+  }
+
+  public void setAskAnon(boolean askAnon) {
+      this.ask = askAnon;
+  }
 }
