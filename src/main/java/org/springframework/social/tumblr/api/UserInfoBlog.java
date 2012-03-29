@@ -11,7 +11,8 @@ public class UserInfoBlog {
     private String title;
     private boolean ask;
     private boolean askAnon;
-    private int followers;
+    private boolean facebookOpengraphEnabled;
+		private int followers;
     private boolean primary;
     private boolean admin;
     private int queue;
@@ -91,9 +92,17 @@ public class UserInfoBlog {
     
     public boolean isAskAnon() {
       return askAnon;
-  }
+    }
 
-  public void setAskAnon(boolean askAnon) {
+    public void setAskAnon(boolean askAnon) {
       this.ask = askAnon;
-  }
+    }
+  
+    public boolean isFacebookOpengraphEnabled() {
+    	return facebookOpengraphEnabled;
+    }
+
+    public void setFacebookOpengraphEnabled(boolean facebookOpengraphEnabled) {
+    	this.facebookOpengraphEnabled = facebookOpengraphEnabled;
+    }
 }
