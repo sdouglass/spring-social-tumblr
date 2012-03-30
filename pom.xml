@@ -8,7 +8,9 @@
     <name>Spring Social Tumblr</name>
     <url>http://maven.apache.org</url>
     <properties>
-        <spring-social.version>1.0.0.RELEASE</spring-social.version>
+        <spring-social.version>1.0.1.RELEASE</spring-social.version>
+        <spring-security-crypto.version>3.1.0.RELEASE</spring-security-crypto.version>
+        <spring-core.version>3.1.0.RELEASE</spring-core.version>
         <jackson.version>1.8.5</jackson.version>
     </properties>
     <dependencies>
@@ -30,19 +32,14 @@
           <version>${spring-social.version}</version>
         </dependency>
         <dependency>
-          <groupId>org.springframework.social</groupId>
-          <artifactId>spring-social-twitter</artifactId>
-          <version>${spring-social.version}</version>
-        </dependency>
-        <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-crypto</artifactId>
-            <version>3.1.0.RC3</version>
+            <version>${spring-security-crypto.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
-            <version>3.1.0.M2</version>
+            <version>${spring-core.version}</version>
         </dependency>
         <dependency>
             <groupId>org.codehaus.jackson</groupId>
@@ -59,6 +56,30 @@
                     <source>1.5</source>
                     <target>1.5</target>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                            <goals>
+                                <goal>jar</goal>
+                            </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

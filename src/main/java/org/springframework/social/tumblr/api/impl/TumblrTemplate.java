@@ -42,7 +42,7 @@ public class TumblrTemplate extends AbstractOAuth1ApiBinding implements Tumblr {
         List<HttpMessageConverter<?>> oldMessageConverters = restTemplate.getMessageConverters();
         for (HttpMessageConverter<?> converter : oldMessageConverters) {
             if (converter instanceof FormHttpMessageConverter) {
-                // use LATIN1 character set for all form posts...?
+                // use LATIN1 character set for all form posts (oddity of Tumblr API, figured out through trial and error)
                 ((FormHttpMessageConverter) converter).setCharset(Charset.forName("LATIN1"));
             }
         }
@@ -51,9 +51,7 @@ public class TumblrTemplate extends AbstractOAuth1ApiBinding implements Tumblr {
         TumblrOAuth1RequestInterceptor interceptor = new TumblrOAuth1RequestInterceptor(this);
         List<ClientHttpRequestInterceptor> newInterceptors = new ArrayList<ClientHttpRequestInterceptor>();
         newInterceptors.add(interceptor);
-        ClientHttpRequestInterceptor[] oldInterceptors = new ClientHttpRequestInterceptor[1];
-        newInterceptors.toArray(oldInterceptors);
-        restTemplate.setInterceptors(oldInterceptors);
+        restTemplate.setInterceptors(newInterceptors);
     }
 
     @Override
