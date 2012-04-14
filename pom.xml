@@ -8,7 +8,7 @@
     <name>Spring Social Tumblr</name>
     <url>http://maven.apache.org</url>
     <properties>
-        <spring-social.version>1.0.0.RELEASE</spring-social.version>
+        <spring-social.version>1.0.2.RELEASE</spring-social.version>
         <jackson.version>1.8.5</jackson.version>
     </properties>
     <dependencies>
