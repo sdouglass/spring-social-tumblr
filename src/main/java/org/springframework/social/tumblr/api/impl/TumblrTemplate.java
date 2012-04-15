@@ -48,9 +48,7 @@ public class TumblrTemplate extends AbstractOAuth1ApiBinding implements Tumblr {
         TumblrOAuth1RequestInterceptor interceptor = new TumblrOAuth1RequestInterceptor(this);
         List<ClientHttpRequestInterceptor> newInterceptors = new ArrayList<ClientHttpRequestInterceptor>();
         newInterceptors.add(interceptor);
-        ClientHttpRequestInterceptor[] oldInterceptors = new ClientHttpRequestInterceptor[1];
-        newInterceptors.toArray(oldInterceptors);
-        restTemplate.setInterceptors(Arrays.asList(oldInterceptors));
+        restTemplate.setInterceptors(newInterceptors);
     }
 
     @Override
