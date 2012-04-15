@@ -4,5 +4,6 @@ src/main/resources/tumblr.properties
 src/test/resources/tumblr.properties
 .DS_Store
 src/test/java/*
+src/test/resources/*
 .idea
 
