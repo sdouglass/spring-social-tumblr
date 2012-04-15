@@ -6,10 +6,6 @@ import org.springframework.web.client.RestTemplate;
 
 import java.net.URI;
 
-/**
- * @author sam
- * @version $Id$
- */
 public class AbstractBlogOperations extends AbstractTumblrOperations {
 
     private String blogHostname;

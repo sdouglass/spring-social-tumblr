@@ -15,10 +15,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * @author sam
- * @version $Id$
- */
 public class TumblrTemplate extends AbstractOAuth1ApiBinding implements Tumblr {
 
     private String apiKey;

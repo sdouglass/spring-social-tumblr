@@ -5,10 +5,6 @@ import org.springframework.social.tumblr.api.Posts;
 import org.springframework.social.tumblr.api.PostsQuery;
 import org.springframework.web.client.RestTemplate;
 
-/**
- * @author sam
- * @version $Id$
- */
 public class BlogPostsTemplate extends AbstractBlogOperations implements BlogPostsOperations {
     public BlogPostsTemplate(RestTemplate restTemplate, boolean isAuthorized, String apiKey, String blogHostname) {
         super(restTemplate, isAuthorized, apiKey, blogHostname);

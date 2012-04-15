@@ -13,10 +13,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * @author sam
- * @version $Id$
- */
 @JsonDeserialize(using = PostMixin.PostDeserializer.class)
 class PostMixin {
 

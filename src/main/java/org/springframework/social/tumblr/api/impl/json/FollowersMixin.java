@@ -5,10 +5,6 @@ import org.springframework.social.tumblr.api.Follower;
 
 import java.util.List;
 
-/**
- * @author sam
- * @version $Id$
- */
 @SuppressWarnings("unused")
 class FollowersMixin {
 

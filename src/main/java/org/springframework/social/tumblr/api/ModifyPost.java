@@ -7,10 +7,6 @@ import org.springframework.util.*;
 import java.io.*;
 import java.util.*;
 
-/**
- * @author sam
- * @version $Id$
- */
 @SuppressWarnings("unused")
 public abstract class ModifyPost {
 

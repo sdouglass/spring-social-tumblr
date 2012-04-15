@@ -7,10 +7,6 @@ import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 
-/**
- * @author sam
- * @version $Id$
- */
 public class UserTemplate extends AbstractTumblrOperations implements UserOperations {
 
     public UserTemplate(RestTemplate restTemplate, boolean isAuthorized, String apiKey) {

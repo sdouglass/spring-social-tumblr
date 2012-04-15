@@ -2,10 +2,6 @@ package org.springframework.social.tumblr.api;
 
 import java.util.List;
 
-/**
- * @author sam
- * @version $Id$
- */
 public class UserInfo {
 
     private int following;

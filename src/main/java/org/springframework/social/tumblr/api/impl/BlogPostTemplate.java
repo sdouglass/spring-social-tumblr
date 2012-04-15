@@ -6,10 +6,6 @@ import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 
-/**
- * @author sam
- * @version $Id$
- */
 public class BlogPostTemplate extends AbstractBlogOperations implements BlogPostOperations {
     public BlogPostTemplate(RestTemplate restTemplate, boolean isAuthorized, String apiKey, String blogHostname) {
         super(restTemplate, isAuthorized, apiKey, blogHostname);

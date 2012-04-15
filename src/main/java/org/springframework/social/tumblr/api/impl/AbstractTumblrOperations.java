@@ -8,10 +8,6 @@ import org.springframework.web.client.RestTemplate;
 
 import java.net.URI;
 
-/**
- * @author sam
- * @version $Id$
- */
 class AbstractTumblrOperations {
 
     private final RestTemplate restTemplate;

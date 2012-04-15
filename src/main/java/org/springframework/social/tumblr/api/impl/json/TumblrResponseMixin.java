@@ -9,10 +9,6 @@ import org.codehaus.jackson.map.annotate.JsonDeserialize;
 
 import java.io.IOException;
 
-/**
- * @author sam
- * @version $Id$
- */
 @JsonDeserialize(using = TumblrResponseMixin.TumblrResponseDeserializer.class)
 class TumblrResponseMixin {
 

@@ -3,10 +3,6 @@ package org.springframework.social.tumblr.api;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 
-/**
- * @author sam
- * @version $Id$
- */
 public class PostsQuery {
 
     public static enum PostFormat {
