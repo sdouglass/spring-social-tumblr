@@ -12,6 +12,7 @@ import org.springframework.web.client.RestTemplate;
 
 import java.nio.charset.Charset;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -53,7 +54,7 @@ public class TumblrTemplate extends AbstractOAuth1ApiBinding implements Tumblr {
         newInterceptors.add(interceptor);
         ClientHttpRequestInterceptor[] oldInterceptors = new ClientHttpRequestInterceptor[1];
         newInterceptors.toArray(oldInterceptors);
-        restTemplate.setInterceptors(oldInterceptors);
+        restTemplate.setInterceptors(Arrays.asList(oldInterceptors));
     }
 
     @Override
