@@ -8,10 +8,10 @@
     <name>Spring Social Tumblr</name>
     <url>http://maven.apache.org</url>
     <properties>
-        <spring-social.version>1.0.0.RELEASE</spring-social.version>
-        <jackson.version>1.8.5</jackson.version>
+        <spring-core.version>3.1.0.RELEASE</spring-core.version>
         <spring-security-crypto.version>3.1.0.RELEASE</spring-security-crypto.version>
-        <spring-core.version>3.0.6.RELEASE</spring-core.version>
+        <spring-social.version>1.0.2.RELEASE</spring-social.version>
+        <jackson.version>1.9.3</jackson.version>
     </properties>
     <dependencies>
         <dependency>
@@ -25,26 +25,26 @@
             <artifactId>log4j</artifactId>
             <version>1.2.14</version>
         </dependency>
-        <!-- Spring Social -->
         <dependency>
-          <groupId>org.springframework.social</groupId>
-          <artifactId>spring-social-core</artifactId>
-          <version>${spring-social.version}</version>
-        </dependency>
-        <dependency>
-          <groupId>org.springframework.social</groupId>
-          <artifactId>spring-social-twitter</artifactId>
-          <version>${spring-social.version}</version>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${spring-core.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-crypto</artifactId>
             <version>${spring-security-crypto.version}</version>
         </dependency>
+        <!-- Spring Social -->
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-core</artifactId>
-            <version>${spring-core.version}</version>
+            <groupId>org.springframework.social</groupId>
+            <artifactId>spring-social-core</artifactId>
+            <version>${spring-social.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.social</groupId>
+            <artifactId>spring-social-twitter</artifactId>
+            <version>${spring-social.version}</version>
         </dependency>
         <dependency>
             <groupId>org.codehaus.jackson</groupId>
@@ -58,8 +58,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>2.0.2</version>
                 <configuration>
-                    <source>1.5</source>
-                    <target>1.5</target>
+                    <source>1.6</source>
+                    <target>1.6</target>
                 </configuration>
             </plugin>
             <plugin>
@@ -80,19 +80,12 @@
                 <executions>
                     <execution>
                         <id>attach-javadocs</id>
-                            <goals>
-                                <goal>jar</goal>
-                            </goals>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
                     </execution>
                 </executions>
             </plugin>
-        </plugins>        
+        </plugins>
     </build>
-    <repositories>
-        <repository>
-            <id>org.springframework.maven.milestone</id>
-            <name>Spring Maven Milestone Repository</name>
-            <url>http://maven.springframework.org/milestone</url>
-        </repository>
-    </repositories>
 </project>

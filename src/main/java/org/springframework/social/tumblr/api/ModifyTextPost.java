@@ -2,10 +2,6 @@ package org.springframework.social.tumblr.api;
 
 import org.springframework.util.MultiValueMap;
 
-/**
- * @author sam
- * @version $Id$
- */
 public class ModifyTextPost extends ModifyPost {
 
     private String title;

@@ -17,10 +17,6 @@ import org.springframework.web.client.HttpServerErrorException;
 import java.io.EOFException;
 import java.io.IOException;
 
-/**
- * @author sam
- * @version $Id$
- */
 public class TumblrHttpMessageConverter extends MappingJacksonHttpMessageConverter {
 
     private ObjectMapper objectMapper = new ObjectMapper();

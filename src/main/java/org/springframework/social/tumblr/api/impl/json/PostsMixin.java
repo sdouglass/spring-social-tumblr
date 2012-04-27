@@ -7,10 +7,6 @@ import org.springframework.social.tumblr.api.Post;
 
 import java.util.List;
 
-/**
- * @author sam
- * @version $Id$
- */
 @SuppressWarnings("unused")
 class PostsMixin {
 

@@ -2,10 +2,6 @@ package org.springframework.social.tumblr.api.impl.json;
 
 import org.springframework.social.tumblr.api.UserInfo;
 
-/**
- * @author sam
- * @version $Id$
- */
 @SuppressWarnings("unused")
 public class UserInfoResponse {
 

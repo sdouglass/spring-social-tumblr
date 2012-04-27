@@ -1,9 +1,5 @@
 package org.springframework.social.tumblr.api.impl.json;
 
-/**
- * @author sam
- * @version $Id$
- */
 public class TumblrResponse {
 
     private int status;

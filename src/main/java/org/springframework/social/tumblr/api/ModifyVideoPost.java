@@ -3,10 +3,6 @@ package org.springframework.social.tumblr.api;
 import org.springframework.core.io.Resource;
 import org.springframework.util.MultiValueMap;
 
-/**
- * @author sam
- * @version $Id$
- */
 public class ModifyVideoPost extends ModifyPost {
 
     private String embed;

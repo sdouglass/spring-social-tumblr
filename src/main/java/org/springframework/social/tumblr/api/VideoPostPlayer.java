@@ -1,9 +1,5 @@
 package org.springframework.social.tumblr.api;
 
-/**
- * @author sam
- * @version $Id$
- */
 public class VideoPostPlayer {
 
     private int width;

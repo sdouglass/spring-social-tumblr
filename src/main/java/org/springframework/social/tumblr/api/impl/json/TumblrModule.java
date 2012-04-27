@@ -4,10 +4,6 @@ import org.codehaus.jackson.Version;
 import org.codehaus.jackson.map.module.SimpleModule;
 import org.springframework.social.tumblr.api.*;
 
-/**
- * @author sam
- * @version $Id$
- */
 public class TumblrModule extends SimpleModule {
     public TumblrModule() {
         super("TumblrModule", new Version(1, 0, 0, null));

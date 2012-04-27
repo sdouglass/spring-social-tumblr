@@ -5,10 +5,6 @@ import org.springframework.social.tumblr.api.*;
 import org.springframework.social.tumblr.api.impl.json.BlogInfoResponse;
 import org.springframework.web.client.RestTemplate;
 
-/**
- * @author sam
- * @version $Id$
- */
 public class BlogTemplate extends AbstractBlogOperations implements BlogOperations {
 
     public BlogTemplate(RestTemplate restTemplate, boolean isAuthorized, String apiKey, String blogHostname) {
