@@ -58,7 +58,7 @@ class PostMixin {
                     if (root.get("title") != null) {
                         post.setTitle(root.get("title").getTextValue());
                     }
-                    post.setTitle(root.get("body").getTextValue());
+                    post.setBody(root.get("body").getTextValue());
                     break;
                 case PHOTO:
                     if (root.get("caption") != null) {
