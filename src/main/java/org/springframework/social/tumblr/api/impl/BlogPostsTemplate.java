@@ -15,7 +15,7 @@ public class BlogPostsTemplate extends AbstractBlogOperations implements BlogPos
         if (query == null) {
             query = new PostsQuery();
         }
-        return getRestTemplate().getForObject(buildUri("posts", "api_key", getApiKey()).toString(), Posts.class, query.toParameterMap());
+        return getRestTemplate().getForObject(buildUri("posts", "api_key", getApiKey(), query.toParameterMap()).toString(), Posts.class);
     }
 
     public Posts queue() {
