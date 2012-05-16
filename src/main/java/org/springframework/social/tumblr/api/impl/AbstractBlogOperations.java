@@ -30,6 +30,13 @@ public class AbstractBlogOperations extends AbstractTumblrOperations {
         parameters.set(parameterName, parameterValue);
         return super.buildUri(makeFullPath(path), parameters);
     }
+    
+    protected URI buildUri(String path, String parameterName, String parameterValue,MultiValueMap<String, String> additionalParameters) {
+        MultiValueMap<String, String> parameters = new LinkedMultiValueMap<String, String>();
+        parameters.set(parameterName, parameterValue);
+        parameters.putAll(additionalParameters);
+        return super.buildUri(makeFullPath(path), parameters);
+    }
 
     @Override
     protected URI buildUri(String path, MultiValueMap<String, String> parameters) {
