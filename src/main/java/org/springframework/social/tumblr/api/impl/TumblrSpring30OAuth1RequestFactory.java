@@ -2,7 +2,6 @@ package org.springframework.social.tumblr.api.impl;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.URI;
 
@@ -53,9 +52,6 @@ public class TumblrSpring30OAuth1RequestFactory implements
 		public ClientHttpResponse execute() throws IOException {
 			byte[] bufferedOutput = bodyOutputStream.toByteArray();
 
-			System.out.println("Output stream to execute: "
-					+ bufferedOutput.length);
-
 			String authorizationHeader = signingUtils
 					.spring30buildAuthorizationHeaderValue(this,
 							bufferedOutput, tumblrTemplate.getCredentials());
@@ -63,11 +59,6 @@ public class TumblrSpring30OAuth1RequestFactory implements
 			delegate.getHeaders().set("Authorization", authorizationHeader);
 
 			ClientHttpResponse reponse = delegate.execute();
-
-			System.out.println("response status: " + reponse.getStatusCode()
-					+ " with status text " + reponse.getStatusText());
-
-			// writeInputStream(reponse.getBody());
 
 			return reponse;
 		}
@@ -87,19 +78,5 @@ public class TumblrSpring30OAuth1RequestFactory implements
 		public OutputStream getBody() throws IOException {
 			return bodyOutputStream;
 		}
-
-		private void writeInputStream(InputStream is) throws IOException {
-			OutputStream os = new ByteArrayOutputStream();
-			byte[] buffer = new byte[256];
-			int bytesRead;
-			while ((bytesRead = is.read(buffer)) != -1) {
-				os.write(buffer, 0, bytesRead);
-			}
-			is.close();
-			os.close();
-
-			System.out.println(os.toString());
-		}
 	}
-
 }
