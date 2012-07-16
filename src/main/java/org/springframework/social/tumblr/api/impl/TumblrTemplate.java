@@ -20,7 +20,13 @@ public class TumblrTemplate extends AbstractOAuth1ApiBinding implements Tumblr {
 	private static boolean interceptorsSupported = ClassUtils.isPresent(
 			"org.springframework.http.client.ClientHttpRequestInterceptor",
 			TumblrTemplate.class.getClassLoader());
-	
+
+	private static boolean configureRestTemplateOverrideSupported = ClassUtils
+			.hasMethod(
+					org.springframework.social.oauth1.AbstractOAuth1ApiBinding.class,
+					"configureRestTemplate",
+					new Class[] { org.springframework.web.client.RestTemplate.class });
+
 	private String apiKey;
 
 	private UserOperations userOperations;
@@ -33,6 +39,12 @@ public class TumblrTemplate extends AbstractOAuth1ApiBinding implements Tumblr {
 		this.apiKey = consumerKey;
 		credentials = new TumblrOAuth1Credentials(consumerKey, consumerSecret,
 				accessToken, accessTokenSecret);
+
+		// if the Spring Core library is 1.0.0.RC1 
+		if (configureRestTemplateOverrideSupported == false) {
+			initConfig();
+		}
+
 		initApis();
 	}
 
@@ -57,12 +69,14 @@ public class TumblrTemplate extends AbstractOAuth1ApiBinding implements Tumblr {
 		// interceptor
 
 		if (interceptorsSupported) {
+			// Spring 3.1
 			TumblrOAuth1RequestInterceptor interceptor = new TumblrOAuth1RequestInterceptor(
 					this);
 			List<ClientHttpRequestInterceptor> newInterceptors = new ArrayList<ClientHttpRequestInterceptor>();
 			newInterceptors.add(interceptor);
 			restTemplate.setInterceptors(newInterceptors);
 		} else {
+			// Spring 3.0
 			restTemplate
 					.setRequestFactory(new TumblrSpring30OAuth1RequestFactory(
 							restTemplate.getRequestFactory(), this));
@@ -86,5 +100,19 @@ public class TumblrTemplate extends AbstractOAuth1ApiBinding implements Tumblr {
 	private void initApis() {
 		this.userOperations = new UserTemplate(getRestTemplate(),
 				isAuthorized(), apiKey);
+	}
+
+	private void initConfig() {
+		RestTemplate restTemplate = getRestTemplate();
+		configureRestTemplate(restTemplate);
+		List<HttpMessageConverter<?>> messageConverters = restTemplate
+				.getMessageConverters();
+		for (HttpMessageConverter<?> converter : messageConverters) {
+			if (converter instanceof MappingJacksonHttpMessageConverter) {
+				restTemplate.getMessageConverters().remove(converter);
+				restTemplate.getMessageConverters().add(
+						new TumblrHttpMessageConverter());
+			}
+		}
 	}
 }
