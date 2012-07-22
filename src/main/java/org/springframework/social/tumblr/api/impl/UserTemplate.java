@@ -27,7 +27,7 @@ public class UserTemplate extends AbstractTumblrOperations implements UserOperat
         if (query == null) {
             query = new PostsQuery();
         }
-        return getRestTemplate().getForObject(buildUri("user/dashboard").toString(), Posts.class, query.toParameterMap());
+        return getRestTemplate().getForObject(buildUri("user/dashboard", query.toParameterMap()).toString(), Posts.class);
     }
 
     public Likes likes() {

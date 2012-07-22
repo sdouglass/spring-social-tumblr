@@ -105,8 +105,8 @@ public class PostsQuery {
         this.sinceId = sinceId;
     }
 
-    public MultiValueMap<String, Object> toParameterMap() {
-        MultiValueMap<String, Object> map = new LinkedMultiValueMap<String, Object>();
+    public MultiValueMap<String, String> toParameterMap() {
+        MultiValueMap<String, String> map = new LinkedMultiValueMap<String, String>();
 
         if (id != null) {
             // if an id is specified only use that search criteria, as the user wants one specific post
@@ -131,7 +131,7 @@ public class PostsQuery {
             map.add("limit", Integer.toString(limit));
 
             if (sinceId != null) {
-                map.add("since_id", sinceId);
+                map.add("since_id", sinceId.toString());
             }
         }
 
