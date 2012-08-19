@@ -29,6 +29,12 @@ public class TumblrTemplate extends AbstractOAuth1ApiBinding implements Tumblr {
         credentials = new TumblrOAuth1Credentials(consumerKey, consumerSecret, accessToken, accessTokenSecret);
         initApis();
     }
+    
+    public TumblrTemplate(String consumerKey) {
+        super();
+        this.apiKey = consumerKey;
+        initApis();
+    }
 
     public TumblrOAuth1Credentials getCredentials() {
         return credentials;

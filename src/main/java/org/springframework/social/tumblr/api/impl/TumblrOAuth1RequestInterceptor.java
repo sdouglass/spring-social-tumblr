@@ -27,7 +27,10 @@ public class TumblrOAuth1RequestInterceptor implements ClientHttpRequestIntercep
 
     public ClientHttpResponse intercept(HttpRequest request, byte[] body, ClientHttpRequestExecution execution) throws IOException {
         HttpRequest protectedResourceRequest = new HttpRequestDecorator(request);
-        protectedResourceRequest.getHeaders().add("Authorization", getAuthorizationHeaderValue(request, body));
+        if (tumblrTemplate.isAuthorized())
+        {
+        	protectedResourceRequest.getHeaders().add("Authorization", getAuthorizationHeaderValue(request, body));
+        }
         return execution.execute(protectedResourceRequest, body);
     }
 
