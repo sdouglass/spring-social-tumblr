@@ -11,8 +11,27 @@ public class BlogInfo {
     private long updated;
     private String description;
     private int likes;
+    private boolean followed;
+    private boolean canSendFanMail;
+    
 
-    public String getTitle() {
+	public boolean isCanSendFanMail() {
+		return canSendFanMail;
+	}
+
+	public void setCanSendFanMail(boolean canSendFanMail) {
+		this.canSendFanMail = canSendFanMail;
+	}
+
+	public boolean isFollowed() {
+		return followed;
+	}
+
+	public void setFollowed(boolean followed) {
+		this.followed = followed;
+	}
+
+	public String getTitle() {
         return title;
     }
 

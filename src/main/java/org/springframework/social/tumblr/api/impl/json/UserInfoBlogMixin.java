@@ -13,6 +13,9 @@ public class UserInfoBlogMixin {
   @JsonDeserialize(using = BooleanYNDeserializer.class)
   private boolean facebookOpengraphEnabled;
 
+  @JsonProperty("facebook")
+  @JsonDeserialize(using = BooleanYNDeserializer.class)
+  private boolean facebook;
 
 
 }

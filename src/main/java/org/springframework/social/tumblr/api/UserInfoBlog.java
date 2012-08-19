@@ -22,9 +22,18 @@ public class UserInfoBlog {
     private int drafts;
     private int messages;
     private String type;
+    private boolean facebook;
 
 
-    public String getName() {
+    public boolean isFacebook() {
+		return facebook;
+	}
+
+	public void setFacebook(boolean facebook) {
+		this.facebook = facebook;
+	}
+
+	public String getName() {
         return name;
     }
 
