@@ -5,6 +5,7 @@ import org.codehaus.jackson.annotate.JsonProperty;
 import org.codehaus.jackson.map.annotate.JsonDeserialize;
 
 @SuppressWarnings("unused")
+@JsonIgnoreProperties(ignoreUnknown=true) 
 class BlogInfoMixin {
 
     @JsonProperty("ask_anon")
