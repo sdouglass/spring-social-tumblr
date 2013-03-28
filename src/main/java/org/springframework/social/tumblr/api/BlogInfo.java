@@ -1,6 +1,6 @@
 package org.springframework.social.tumblr.api;
 
-public class BlogInfo {
+public class BlogInfo extends BaseEntity {
 
     private String name;
     private String url;

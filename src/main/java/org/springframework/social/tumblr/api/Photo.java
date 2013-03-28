@@ -2,7 +2,7 @@ package org.springframework.social.tumblr.api;
 
 import java.util.List;
 
-public class Photo {
+public class Photo extends BaseEntity {
 
     private String caption;
     private List<PhotoSize> sizes;

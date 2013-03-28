@@ -2,7 +2,7 @@ package org.springframework.social.tumblr.api;
 
 import java.util.Date;
 
-public class UserInfoBlog {
+public class UserInfoBlog extends BaseEntity {
 
     private String name;
     private String url;

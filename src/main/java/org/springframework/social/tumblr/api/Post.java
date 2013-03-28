@@ -2,7 +2,7 @@ package org.springframework.social.tumblr.api;
 
 import java.util.List;
 
-public class Post {
+public class Post extends BaseEntity {
 
     private long id;
     private String blogName;

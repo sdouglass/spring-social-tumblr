@@ -2,7 +2,7 @@ package org.springframework.social.tumblr.api;
 
 import java.util.List;
 
-public class UserInfo {
+public class UserInfo extends BaseEntity {
 
     private int following;
     private String defaultPostFormat;

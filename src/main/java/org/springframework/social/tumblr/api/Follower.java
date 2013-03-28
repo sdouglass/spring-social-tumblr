@@ -1,6 +1,6 @@
 package org.springframework.social.tumblr.api;
 
-public class Follower {
+public class Follower extends BaseEntity {
 
     private String name;
     private String url;

@@ -1,6 +1,6 @@
 package org.springframework.social.tumblr.api;
 
-public class ChatMessage {
+public class ChatMessage extends BaseEntity {
 
     private String label;
     private String name;
