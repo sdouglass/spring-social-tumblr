@@ -1,3 +1,6 @@
+.classpath
+.project
+.settings
 target
 spring-social-tumblr.i*
 src/main/resources/tumblr.properties
@@ -6,4 +9,5 @@ src/test/resources/tumblr.properties
 src/test/java/*
 src/test/resources/*
 .idea
+atlassian-ide-plugin.xml
 
