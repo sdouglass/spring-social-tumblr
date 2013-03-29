@@ -4,7 +4,7 @@
     <groupId>org.springframework.social</groupId>
     <artifactId>spring-social-tumblr</artifactId>
     <packaging>jar</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0a1</version>
     <name>Spring Social Tumblr</name>
     <url>http://maven.apache.org</url>
     <properties>
