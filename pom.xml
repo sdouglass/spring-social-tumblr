@@ -1,12 +1,22 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.sonatype.oss</groupId>
+        <artifactId>oss-parent</artifactId>
+        <version>7</version>
+    </parent>
     <groupId>org.springframework.social</groupId>
     <artifactId>spring-social-tumblr</artifactId>
     <packaging>jar</packaging>
     <version>1.0a2-SNAPSHOT</version>
     <name>Spring Social Tumblr</name>
-    <url>http://maven.apache.org</url>
+    <url>https://github.com/sdouglass/spring-social-tumblr</url>
+    <scm>
+        <url>scm:git:git@github.com:sdouglass/spring-social-tumblr.git</url>
+        <connection>scm:git:git@github.com:sdouglass/spring-social-tumblr.git</connection>
+        <developerConnection>scm:git:git@github.com:sdouglass/spring-social-tumblr.git</developerConnection>
+    </scm>
     <properties>
         <spring-core.version>3.1.0.RELEASE</spring-core.version>
         <spring-security-crypto.version>3.1.0.RELEASE</spring-security-crypto.version>
