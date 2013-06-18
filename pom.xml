@@ -8,15 +8,30 @@
     </parent>
     <groupId>org.springframework.social</groupId>
     <artifactId>spring-social-tumblr</artifactId>
-    <packaging>jar</packaging>
     <version>1.0a2-SNAPSHOT</version>
+    <packaging>jar</packaging>
     <name>Spring Social Tumblr</name>
     <url>https://github.com/sdouglass/spring-social-tumblr</url>
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
     <scm>
         <url>scm:git:git@github.com:sdouglass/spring-social-tumblr.git</url>
         <connection>scm:git:git@github.com:sdouglass/spring-social-tumblr.git</connection>
         <developerConnection>scm:git:git@github.com:sdouglass/spring-social-tumblr.git</developerConnection>
     </scm>
+    <developers>
+        <developer>
+            <id>sdouglass</id>
+            <name>S Douglass</name>
+            <email>sdouglassdev@gmail.com</email>
+            <url>https://github.com/sdouglass/</url>
+        </developer>
+    </developers>
     <properties>
         <spring-core.version>3.1.0.RELEASE</spring-core.version>
         <spring-security-crypto.version>3.1.0.RELEASE</spring-security-crypto.version>
@@ -65,8 +80,9 @@
     <build>
         <plugins>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.0.2</version>
+                <version>2.3.2</version>
                 <configuration>
                     <source>1.6</source>
                     <target>1.6</target>
@@ -75,6 +91,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
+                <version>2.1.2</version>
                 <executions>
                     <execution>
                         <id>attach-sources</id>
@@ -87,6 +104,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.8.1</version>
                 <executions>
                     <execution>
                         <id>attach-javadocs</id>
