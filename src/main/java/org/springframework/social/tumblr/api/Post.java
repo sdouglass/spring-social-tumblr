@@ -376,4 +376,48 @@ public class Post extends BaseEntity {
     public void setAnswer(String answer) {
         this.answer = answer;
     }
+
+    @Override
+    public String toString() {
+        return "Post{" +
+                "id=" + id +
+                ", blogName='" + blogName + '\'' +
+                ", type=" + type +
+                ", postUrl='" + postUrl + '\'' +
+                ", timestamp=" + timestamp +
+                ", gmtDateString='" + gmtDateString + '\'' +
+                ", format='" + format + '\'' +
+                ", reblogKey='" + reblogKey + '\'' +
+                ", tags=" + tags +
+                ", noteCount=" + noteCount +
+                ", createdViaBookmarklet=" + createdViaBookmarklet +
+                ", createdViaMobile=" + createdViaMobile +
+                ", sourceUrl='" + sourceUrl + '\'' +
+                ", sourceTitle='" + sourceTitle + '\'' +
+                ", title='" + title + '\'' +
+                ", body='" + body + '\'' +
+                ", caption='" + caption + '\'' +
+                ", width=" + width +
+                ", height=" + height +
+                ", photos=" + photos +
+                ", text='" + text + '\'' +
+                ", source='" + source + '\'' +
+                ", url='" + url + '\'' +
+                ", description='" + description + '\'' +
+                ", dialogue=" + dialogue +
+                ", audioPlayer='" + audioPlayer + '\'' +
+                ", plays=" + plays +
+                ", albumArt='" + albumArt + '\'' +
+                ", artist='" + artist + '\'' +
+                ", album='" + album + '\'' +
+                ", trackName='" + trackName + '\'' +
+                ", trackNumber=" + trackNumber +
+                ", year=" + year +
+                ", videoPlayers=" + videoPlayers +
+                ", askingName='" + askingName + '\'' +
+                ", askingUrl='" + askingUrl + '\'' +
+                ", question='" + question + '\'' +
+                ", answer='" + answer + '\'' +
+                "} " + super.toString();
+    }
 }

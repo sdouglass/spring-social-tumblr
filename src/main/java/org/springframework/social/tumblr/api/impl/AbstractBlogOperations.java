@@ -31,7 +31,7 @@ public class AbstractBlogOperations extends AbstractTumblrOperations {
         return super.buildUri(makeFullPath(path), parameters);
     }
     
-    protected URI buildUri(String path, String parameterName, String parameterValue,MultiValueMap<String, String> additionalParameters) {
+    protected URI buildUri(String path, String parameterName, String parameterValue, MultiValueMap<String, String> additionalParameters) {
         MultiValueMap<String, String> parameters = new LinkedMultiValueMap<String, String>();
         parameters.set(parameterName, parameterValue);
         parameters.putAll(additionalParameters);

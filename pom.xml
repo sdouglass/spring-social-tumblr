@@ -33,7 +33,6 @@
         </developer>
     </developers>
     <properties>
-        <spring-core.version>3.1.0.RELEASE</spring-core.version>
         <spring-security-crypto.version>3.1.0.RELEASE</spring-security-crypto.version>
         <spring-social.version>1.0.2.RELEASE</spring-social.version>
         <jackson.version>1.9.3</jackson.version>
@@ -46,24 +45,13 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-core</artifactId>
-            <version>${spring-core.version}</version>
-        </dependency>
-        <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-crypto</artifactId>
             <version>${spring-security-crypto.version}</version>
         </dependency>
-        <!-- Spring Social -->
         <dependency>
             <groupId>org.springframework.social</groupId>
             <artifactId>spring-social-core</artifactId>
-            <version>${spring-social.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.social</groupId>
-            <artifactId>spring-social-twitter</artifactId>
             <version>${spring-social.version}</version>
         </dependency>
         <dependency>

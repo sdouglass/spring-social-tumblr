@@ -23,4 +23,12 @@ public class Followers {
     public void setFollowers(List<Follower> followers) {
         this.followers = followers;
     }
+
+    @Override
+    public String toString() {
+        return "Followers{" +
+                "totalFollowers=" + totalFollowers +
+                ", followers=" + followers +
+                '}';
+    }
 }

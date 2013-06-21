@@ -23,4 +23,12 @@ public class Likes {
     public void setLikedPosts(List<Post> likedPosts) {
         this.likedPosts = likedPosts;
     }
+
+    @Override
+    public String toString() {
+        return "Likes{" +
+                "totalLikes=" + totalLikes +
+                ", likedPosts=" + likedPosts +
+                '}';
+    }
 }

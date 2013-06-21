@@ -23,4 +23,11 @@ public class BaseEntity {
     public Map<String, Object> getProperties() {
         return properties;
     }
+
+    @Override
+    public String toString() {
+        return "BaseEntity{" +
+                "properties=" + properties +
+                '}';
+    }
 }

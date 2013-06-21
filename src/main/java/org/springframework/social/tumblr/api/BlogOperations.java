@@ -10,6 +10,10 @@ public interface BlogOperations {
 
     Followers followers(int offset, int limit);
 
+    Likes likes();
+
+    Likes likes(int offset, int limit);
+
     BlogPostOperations blogPostOperations();
     
     BlogPostsOperations blogPostsOperations();

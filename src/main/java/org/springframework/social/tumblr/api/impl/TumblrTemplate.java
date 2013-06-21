@@ -6,13 +6,13 @@ import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.MappingJacksonHttpMessageConverter;
 import org.springframework.social.oauth1.AbstractOAuth1ApiBinding;
 import org.springframework.social.tumblr.api.BlogOperations;
+import org.springframework.social.tumblr.api.TaggedOperations;
 import org.springframework.social.tumblr.api.Tumblr;
 import org.springframework.social.tumblr.api.UserOperations;
 import org.springframework.web.client.RestTemplate;
 
 import java.nio.charset.Charset;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class TumblrTemplate extends AbstractOAuth1ApiBinding implements Tumblr {
@@ -20,6 +20,8 @@ public class TumblrTemplate extends AbstractOAuth1ApiBinding implements Tumblr {
     private String apiKey;
 
     private UserOperations userOperations;
+
+    private TaggedOperations taggedOperations;
 
     private TumblrOAuth1Credentials credentials;
 
@@ -70,7 +72,12 @@ public class TumblrTemplate extends AbstractOAuth1ApiBinding implements Tumblr {
         return userOperations;
     }
 
+    public TaggedOperations taggedOperations() {
+        return taggedOperations;
+    }
+
     private void initApis() {
         this.userOperations = new UserTemplate(getRestTemplate(), isAuthorized(), apiKey);
+        this.taggedOperations = new TaggedOperationsTemplate(getRestTemplate(), isAuthorized(), apiKey);
     }
 }

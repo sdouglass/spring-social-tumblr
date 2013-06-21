@@ -177,4 +177,28 @@ public class UserInfoBlog extends BaseEntity {
         this.type = type;
     }
 
+    @Override
+    public String toString() {
+        return "UserInfoBlog{" +
+                "name='" + name + '\'' +
+                ", url='" + url + '\'' +
+                ", title='" + title + '\'' +
+                ", ask=" + ask +
+                ", askAnon=" + askAnon +
+                ", facebookOpengraphEnabled=" + facebookOpengraphEnabled +
+                ", followers=" + followers +
+                ", primary=" + primary +
+                ", admin=" + admin +
+                ", queue=" + queue +
+                ", tweet='" + tweet + '\'' +
+                ", description='" + description + '\'' +
+                ", updated=" + updated +
+                ", posts=" + posts +
+                ", blogs=" + blogs +
+                ", drafts=" + drafts +
+                ", messages=" + messages +
+                ", type='" + type + '\'' +
+                ", facebook=" + facebook +
+                "} " + super.toString();
+    }
 }

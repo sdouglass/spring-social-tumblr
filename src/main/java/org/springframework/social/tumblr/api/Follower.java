@@ -29,4 +29,13 @@ public class Follower extends BaseEntity {
     public void setUpdated(long updated) {
         this.updated = updated;
     }
+
+    @Override
+    public String toString() {
+        return "Follower{" +
+                "name='" + name + '\'' +
+                ", url='" + url + '\'' +
+                ", updated=" + updated +
+                "} " + super.toString();
+    }
 }

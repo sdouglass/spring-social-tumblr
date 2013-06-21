@@ -53,4 +53,12 @@ public class ModifyAudioPost extends ModifyPost {
 
         return map;
     }
+
+    @Override
+    public String toString() {
+        return "ModifyAudioPost{" +
+                "externalUrl='" + externalUrl + '\'' +
+                ", caption='" + caption + '\'' +
+                "} " + super.toString();
+    }
 }

@@ -33,4 +33,13 @@ public class Posts {
     public void setPosts(List<Post> posts) {
         this.posts = posts;
     }
+
+    @Override
+    public String toString() {
+        return "Posts{" +
+                "blogInfo=" + blogInfo +
+                ", totalPosts=" + totalPosts +
+                ", posts=" + posts +
+                '}';
+    }
 }

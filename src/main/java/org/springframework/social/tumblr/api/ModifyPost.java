@@ -197,4 +197,17 @@ public abstract class ModifyPost {
         return bos.toByteArray();
     }
 
+    @Override
+    public String toString() {
+        return "ModifyPost{" +
+                "id=" + id +
+                ", type=" + type +
+                ", state=" + state +
+                ", tags=" + tags +
+                ", tweet='" + tweet + '\'' +
+                ", date=" + date +
+                ", markdown=" + markdown +
+                ", slug='" + slug + '\'' +
+                '}';
+    }
 }

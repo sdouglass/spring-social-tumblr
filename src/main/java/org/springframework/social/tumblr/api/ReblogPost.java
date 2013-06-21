@@ -39,4 +39,12 @@ public class ReblogPost extends ModifyPost {
 
         return map;
     }
+
+    @Override
+    public String toString() {
+        return "ReblogPost{" +
+                "reblogKey='" + reblogKey + '\'' +
+                ", comment='" + comment + '\'' +
+                "} " + super.toString();
+    }
 }

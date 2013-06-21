@@ -49,4 +49,15 @@ public class UserInfo extends BaseEntity {
     public void setBlogs(List<UserInfoBlog> blogs) {
         this.blogs = blogs;
     }
+
+    @Override
+    public String toString() {
+        return "UserInfo{" +
+                "following=" + following +
+                ", defaultPostFormat='" + defaultPostFormat + '\'' +
+                ", name='" + name + '\'' +
+                ", likes=" + likes +
+                ", blogs=" + blogs +
+                "} " + super.toString();
+    }
 }
