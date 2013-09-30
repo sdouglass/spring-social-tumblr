@@ -1,0 +1,1 @@
+http\://www.springframework.org/schema/social/tumblr=org.springframework.social.tumblr.config.xml.TumblrNamespaceHandler
