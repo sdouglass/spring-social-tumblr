@@ -25,16 +25,37 @@ public class TumblrTemplate extends AbstractOAuth1ApiBinding implements Tumblr {
 
     private TumblrOAuth1Credentials credentials;
 
+    /**
+     * Constructor to make unauthenticated calls to Tumblr's public API methods.
+     */
+    public TumblrTemplate() {
+        super();
+        initApis();
+    }
+
+    /**
+     * Constructor to make calls to Tumblr's API methods that require an API key.
+     *
+     * @param consumerKey your Tumblr app's API key
+     */
+    public TumblrTemplate(String consumerKey) {
+        super();
+        this.apiKey = consumerKey;
+        initApis();
+    }
+
+    /**
+     * Constructor to make calls to Tubmlr's API on behalf of a Tumblr user.
+     *
+     * @param consumerKey your Tumblr app's API key
+     * @param consumerSecret your Tumblr app's secret
+     * @param accessToken the access token your app has been granted for a particular user
+     * @param accessTokenSecret the access token secret your app has been granted for a particular user
+     */
     public TumblrTemplate(String consumerKey, String consumerSecret, String accessToken, String accessTokenSecret) {
         super(consumerKey, consumerSecret, accessToken, accessTokenSecret);
         this.apiKey = consumerKey;
         credentials = new TumblrOAuth1Credentials(consumerKey, consumerSecret, accessToken, accessTokenSecret);
-        initApis();
-    }
-    
-    public TumblrTemplate(String consumerKey) {
-        super();
-        this.apiKey = consumerKey;
         initApis();
     }
 

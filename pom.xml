@@ -33,6 +33,7 @@
         </developer>
     </developers>
     <properties>
+        <commons-logging.version>1.1.1</commons-logging.version>
         <spring-security-crypto.version>3.2.0.RC1</spring-security-crypto.version>
         <spring-social.version>1.1.0.BUILD-SNAPSHOT</spring-social.version>
         <jackson.version>2.2.2</jackson.version>
@@ -45,6 +46,11 @@
             <scope>test</scope>
         </dependency>
         <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>${commons-logging.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-crypto</artifactId>
             <version>${spring-security-crypto.version}</version>
@@ -52,6 +58,16 @@
         <dependency>
             <groupId>org.springframework.social</groupId>
             <artifactId>spring-social-core</artifactId>
+            <version>${spring-social.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.social</groupId>
+            <artifactId>spring-social-config</artifactId>
+            <version>${spring-social.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.social</groupId>
+            <artifactId>spring-social-security</artifactId>
             <version>${spring-social.version}</version>
         </dependency>
         <dependency>
