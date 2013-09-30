@@ -6,10 +6,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Tumblr adds new fields to their response. Set up a map 
- * and method for collecting the values for these new fields
- * to avoid deserialization errors and still make the new
- * values available.
+ * Tumblr occasionally adds new undocumented fields to their API responses.
+ *
+ * Set up a map and method for collecting the values for these new fields
+ * to avoid deserialization errors but still make the new values available.
  */
 public class BaseEntity {
     

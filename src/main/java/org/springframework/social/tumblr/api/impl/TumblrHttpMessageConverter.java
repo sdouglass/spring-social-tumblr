@@ -1,6 +1,7 @@
 package org.springframework.social.tumblr.api.impl;
 
 import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.http.HttpInputMessage;
 import org.springframework.http.HttpOutputMessage;
@@ -15,6 +16,7 @@ import org.springframework.web.client.HttpServerErrorException;
 
 import java.io.EOFException;
 import java.io.IOException;
+import java.lang.reflect.Type;
 
 public class TumblrHttpMessageConverter extends MappingJackson2HttpMessageConverter {
 
@@ -27,17 +29,18 @@ public class TumblrHttpMessageConverter extends MappingJackson2HttpMessageConver
     }
 
     @Override
-    protected Object readInternal(Class<?> clazz, HttpInputMessage inputMessage) throws IOException, HttpMessageNotReadableException {
+    public Object read(Type type, Class<?> contextClass, HttpInputMessage inputMessage) throws IOException, HttpMessageNotReadableException {
         try {
             TumblrResponse tumblrResponse = objectMapper.readValue(inputMessage.getBody(), TumblrResponse.class);
             checkResponse(tumblrResponse);
             Object result;
-            if (clazz.equals(TumblrResponse.class)) {
+            if (TumblrResponse.class.equals(type)) {
                 // don't parse the response json, callee is going to process is manually
                 result = tumblrResponse;
             } else {
                 // parse the response json into an instance of the given class
-                result = objectMapper.readValue(tumblrResponse.getResponseJson(), clazz);
+                JavaType javaType = getJavaType(type, contextClass);
+                result = objectMapper.readValue(tumblrResponse.getResponseJson(), javaType);
             }
             return result;
         }
