@@ -77,8 +77,6 @@ public class BlogPostTemplate extends AbstractBlogOperations implements BlogPost
     public void edit(ModifyPost post) {
         requireAuthorization();
         MultiValueMap<String, String> map = post.toParameterMap();
-        // need to strip type? can't send type? don't know...???
-//        map.remove("type");
         // don't care about response, already have id of post
         getRestTemplate().postForObject(buildUri("post/edit"), map, TumblrResponse.class);
     }
@@ -95,8 +93,6 @@ public class BlogPostTemplate extends AbstractBlogOperations implements BlogPost
         }
         requireAuthorization();
         MultiValueMap<String, String> map = post.toParameterMap();
-        // need to strip type? can't send type? don't know...???
-//        map.remove("type");
         // don't care about response, already have id of post
         getRestTemplate().postForObject(buildUri("post/reblog"), map, TumblrResponse.class);
     }

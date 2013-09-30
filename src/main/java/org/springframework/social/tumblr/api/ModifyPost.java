@@ -18,6 +18,9 @@ public abstract class ModifyPost {
 
     private List<String> tags;
 
+    /**
+     * Manages the autotweet (if enabled) for this post: set to "off" for no tweet, or enter text to override the default tweet
+     */
     private String tweet;
 
     private Date date;

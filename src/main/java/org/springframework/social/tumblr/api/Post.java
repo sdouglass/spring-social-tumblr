@@ -18,6 +18,8 @@ public class Post extends BaseEntity {
     private boolean createdViaMobile;
     private String sourceUrl;
     private String sourceTitle;
+    private boolean liked;
+    private PostState state;
 
     // text type, link type, chat type
     private String title;
@@ -183,6 +185,22 @@ public class Post extends BaseEntity {
 
     public void setSourceTitle(String sourceTitle) {
         this.sourceTitle = sourceTitle;
+    }
+
+    public boolean isLiked() {
+        return liked;
+    }
+
+    public void setLiked(boolean liked) {
+        this.liked = liked;
+    }
+
+    public PostState getState() {
+        return state;
+    }
+
+    public void setState(PostState state) {
+        this.state = state;
     }
 
     public String getTitle() {

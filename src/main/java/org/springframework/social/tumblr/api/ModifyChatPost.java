@@ -4,6 +4,9 @@ import org.springframework.util.MultiValueMap;
 
 public class ModifyChatPost extends ModifyPost {
 
+    /**
+     * The text of the conversation/chat, with dialogue labels (no HTML).
+     */
     private String conversation;
     private String title;
 

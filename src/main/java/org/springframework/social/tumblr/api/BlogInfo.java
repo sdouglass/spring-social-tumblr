@@ -5,7 +5,13 @@ public class BlogInfo extends BaseEntity {
     private String name;
     private String url;
     private String title;
+    /**
+     * Whether or not the blog allows questions.
+     */
     private boolean ask;
+    /**
+     * Whether or not the blog allows anonymous questions.
+     */
     private boolean askAnon;
     private int posts;
     private long updated;
