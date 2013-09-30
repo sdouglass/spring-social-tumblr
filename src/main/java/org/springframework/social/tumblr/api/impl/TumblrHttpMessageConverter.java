@@ -1,14 +1,13 @@
 package org.springframework.social.tumblr.api.impl;
 
-import org.codehaus.jackson.JsonParseException;
-import org.codehaus.jackson.map.DeserializationConfig;
-import org.codehaus.jackson.map.ObjectMapper;
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.http.HttpInputMessage;
 import org.springframework.http.HttpOutputMessage;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.http.converter.HttpMessageNotWritableException;
-import org.springframework.http.converter.json.MappingJacksonHttpMessageConverter;
+import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.social.tumblr.api.impl.json.TumblrModule;
 import org.springframework.social.tumblr.api.impl.json.TumblrResponse;
 import org.springframework.web.client.HttpClientErrorException;
@@ -17,7 +16,7 @@ import org.springframework.web.client.HttpServerErrorException;
 import java.io.EOFException;
 import java.io.IOException;
 
-public class TumblrHttpMessageConverter extends MappingJacksonHttpMessageConverter {
+public class TumblrHttpMessageConverter extends MappingJackson2HttpMessageConverter {
 
     private ObjectMapper objectMapper = new ObjectMapper();
 

@@ -8,7 +8,7 @@
     </parent>
     <groupId>org.springframework.social</groupId>
     <artifactId>spring-social-tumblr</artifactId>
-    <version>1.0a2-SNAPSHOT</version>
+    <version>1.1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>Spring Social Tumblr</name>
     <url>https://github.com/sdouglass/spring-social-tumblr</url>
@@ -33,9 +33,9 @@
         </developer>
     </developers>
     <properties>
-        <spring-security-crypto.version>3.1.0.RELEASE</spring-security-crypto.version>
-        <spring-social.version>1.0.2.RELEASE</spring-social.version>
-        <jackson.version>1.9.3</jackson.version>
+        <spring-security-crypto.version>3.2.0.RC1</spring-security-crypto.version>
+        <spring-social.version>1.1.0.BUILD-SNAPSHOT</spring-social.version>
+        <jackson.version>2.2.2</jackson.version>
     </properties>
     <dependencies>
         <dependency>
@@ -55,8 +55,18 @@
             <version>${spring-social.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.codehaus.jackson</groupId>
-            <artifactId>jackson-mapper-asl</artifactId>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
             <version>${jackson.version}</version>
         </dependency>
     </dependencies>
@@ -99,4 +109,12 @@
             </plugin>
         </plugins>
     </build>
+    <!-- repo for Spring Social 1.1.0 pre-release code -->
+    <repositories>
+        <repository>
+            <id>spring-build-snapshot</id>
+            <name>Spring Build Snapshot</name>
+            <url>http://repo.springsource.org/libs-snapshot</url>
+        </repository>
+    </repositories>
 </project>

@@ -3,7 +3,7 @@ package org.springframework.social.tumblr.api.impl;
 import org.springframework.http.client.ClientHttpRequestInterceptor;
 import org.springframework.http.converter.FormHttpMessageConverter;
 import org.springframework.http.converter.HttpMessageConverter;
-import org.springframework.http.converter.json.MappingJacksonHttpMessageConverter;
+import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.social.oauth1.AbstractOAuth1ApiBinding;
 import org.springframework.social.tumblr.api.BlogOperations;
 import org.springframework.social.tumblr.api.TaggedOperations;
@@ -60,7 +60,7 @@ public class TumblrTemplate extends AbstractOAuth1ApiBinding implements Tumblr {
     }
 
     @Override
-    protected MappingJacksonHttpMessageConverter getJsonMessageConverter() {
+    protected MappingJackson2HttpMessageConverter getJsonMessageConverter() {
         return new TumblrHttpMessageConverter();
     }
 

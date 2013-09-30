@@ -1,11 +1,7 @@
 package org.springframework.social.tumblr.api.impl.json;
 
-import org.codehaus.jackson.annotate.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.social.tumblr.api.BlogInfo;
-import org.springframework.social.tumblr.api.Follower;
-import org.springframework.social.tumblr.api.Post;
-
-import java.util.List;
 
 @SuppressWarnings("unused")
 class PostsMixin {

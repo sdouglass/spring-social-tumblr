@@ -1,12 +1,12 @@
 package org.springframework.social.tumblr.api.impl.json;
 
-import org.codehaus.jackson.Version;
-import org.codehaus.jackson.map.module.SimpleModule;
+import com.fasterxml.jackson.core.Version;
+import com.fasterxml.jackson.databind.module.SimpleModule;
 import org.springframework.social.tumblr.api.*;
 
 public class TumblrModule extends SimpleModule {
     public TumblrModule() {
-        super("TumblrModule", new Version(1, 0, 0, null));
+        super("TumblrModule", new Version(1, 0, 0, null, "org.springframework.social", "spring-social-tumblr"));
     }
 
     @Override

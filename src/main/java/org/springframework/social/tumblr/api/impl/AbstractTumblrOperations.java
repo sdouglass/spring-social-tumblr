@@ -22,13 +22,13 @@ class AbstractTumblrOperations {
 
     protected void requireAuthorization() {
         if (!isAuthorized) {
-            throw new MissingAuthorizationException();
+            throw new MissingAuthorizationException("Authorization missing");
         }
     }
 
     protected void requireApiKey() {
         if (apiKey == null) {
-            throw new MissingAuthorizationException();
+            throw new MissingAuthorizationException("Authorization missing");
         }
     }
 

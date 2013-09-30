@@ -1,6 +1,6 @@
 package org.springframework.social.tumblr.api;
 
-import org.codehaus.jackson.annotate.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
 
 import java.util.HashMap;
 import java.util.Map;
