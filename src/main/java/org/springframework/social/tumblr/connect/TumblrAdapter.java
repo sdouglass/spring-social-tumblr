@@ -43,7 +43,7 @@ public class TumblrAdapter implements ApiAdapter<Tumblr> {
         // tumblr API doesn't seem to provide any of this data...?
         // use profile.getName() ("short name") for id for now
 		values.setProviderUserId(profile.getName());
-		values.setDisplayName(null);
+		values.setDisplayName(profile.getName());
         // this might not be right if user has a custom domain
 //		values.setProfileUrl("http://"+profile.getName()+".tumblr.com/");
 		values.setProfileUrl(null);
