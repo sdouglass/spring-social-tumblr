@@ -23,11 +23,4 @@ public class TumblrProviderConfigRegistrar extends AbstractProviderConfigRegistr
     protected Class<? extends SocialAuthenticationService<?>> getAuthenticationServiceClass() {
         return TumblrAuthenticationService.class;
     }
-    
-    @Override
-    protected BeanDefinition getConnectionFactoryBeanDefinition(String appId, String appSecret, Map<String, Object> allAttributes) {
-        BeanDefinitionBuilder builder = BeanDefinitionBuilder.genericBeanDefinition(TumblrConnectionFactory.class).addConstructorArgValue(appId).addConstructorArgValue(appSecret);
-        return builder.getBeanDefinition();
-    }
-
 }
