@@ -10,4 +10,4 @@ src/test/java/*
 src/test/resources/*
 .idea
 atlassian-ide-plugin.xml
-
+out
