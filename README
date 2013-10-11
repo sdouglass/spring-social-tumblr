@@ -5,7 +5,7 @@ http://www.tumblr.com/docs/en/api/v2
 
 Supports accessing API calls requiring no authentication, or requiring just an API key, as well as calls requiring OAuth.
 
-Now also supports posting binary files.
+*Updated for compatibility with the latest Spring Social 1.1.0 milestones (M4)!*
 
 To add this project as a dependency using Maven, add the following XML snippets to your pom.xml file:
 
@@ -14,7 +14,7 @@ To add this project as a dependency using Maven, add the following XML snippets 
     <dependency>
       <groupId>org.springframework.social</groupId>
       <artifactId>spring-social-tumblr</artifactId>
-      <version>1.0a1</version>
+      <version>1.1.0.M1</version>
     </dependency>
   </dependencies>
 ...
