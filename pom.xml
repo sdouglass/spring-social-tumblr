@@ -8,7 +8,7 @@
     </parent>
     <groupId>org.springframework.social</groupId>
     <artifactId>spring-social-tumblr</artifactId>
-    <version>1.1.0-SNAPSHOT</version>
+    <version>1.1.0.M1</version>
     <packaging>jar</packaging>
     <name>Spring Social Tumblr</name>
     <url>https://github.com/sdouglass/spring-social-tumblr</url>
@@ -35,7 +35,7 @@
     <properties>
         <commons-logging.version>1.1.1</commons-logging.version>
         <spring-security-crypto.version>3.2.0.RC1</spring-security-crypto.version>
-        <spring-social.version>1.1.0.BUILD-SNAPSHOT</spring-social.version>
+        <spring-social.version>1.1.0.M4</spring-social.version>
         <jackson.version>2.2.2</jackson.version>
     </properties>
     <dependencies>
@@ -128,9 +128,9 @@
     <!-- repo for Spring Social 1.1.0 pre-release code -->
     <repositories>
         <repository>
-            <id>spring-build-snapshot</id>
-            <name>Spring Build Snapshot</name>
-            <url>http://repo.springsource.org/libs-snapshot</url>
+            <id>spring-milestone-repository</id>
+            <name>Spring Milestone Repository</name>
+            <url>http://repo.springsource.org/milestone</url>
         </repository>
     </repositories>
 </project>
