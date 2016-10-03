@@ -38,6 +38,16 @@
         <spring-social.version>1.1.0.BUILD-SNAPSHOT</spring-social.version>
         <jackson.version>2.2.2</jackson.version>
     </properties>
+    <distributionManagement>
+	 	<repository>
+		<id>repo</id>
+			<url>https://github.com/OpenSourceAgility/opensourceagility-mvn-repo/raw/master/releases</url>
+		</repository>
+		<snapshotRepository>
+			<id>snapshot-repo</id>
+			<url>https://github.com/OpenSourceAgility/opensourceagility-mvn-repo/raw/master/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
